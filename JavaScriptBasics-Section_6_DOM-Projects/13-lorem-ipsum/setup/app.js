@@ -11,3 +11,77 @@ I just told you! You've killed me! Fry! Quit doing the right thing, you jerk! Mi
   `Man braid celiac synth freegan readymade, pitchfork fam salvia waistcoat lomo bitters gentrify four loko. Pitchfork semiotics post-ironic vegan. Tofu meditation microdosing hashtag semiotics venmo. Flexitarian vape tilde taiyaki. Prism poutine farm-to-table, messenger bag vegan taxidermy tattooed sartorial squid jean shorts fixie selvage trust fund vape.`,
   `Rutters Plate Fleet boom chandler Brethren of the Coast handsomely lookout marooned brigantine knave. Buccaneer gangway jack rum loot spyglass line Jack Tar fore gaff. Gaff topmast scuttle ballast swab draught measured fer yer chains dance the hempen jig Chain Shot yardarm.`,
 ];
+
+const form = document.querySelector(".lorem-form");
+const amount = document.getElementById("amount");
+const result = document.querySelector(".lorem-text");
+
+form.addEventListener("submit", function (e) {
+  // A click on a form submit button – initiates its submission to the server.
+
+  e.preventDefault();
+
+  const value = parseInt(amount.value);
+  //console.log(value);
+  //console.log(isNaN(value));
+
+  //empty
+  //-1
+  //>9
+
+  const random = Math.floor(Math.random() * text.length);
+
+  if (isNaN(value) || value <= 0 || value > 9) {
+    result.innerHTML = `<p class="result">${text[random]}</p>`;
+  } else {
+    let tempText = text.slice(0, value);
+    //console.log(tempText);
+    tempText = tempText.map(function (item) {
+        return `<p class="result">${item}</p>`;
+      })
+      //console.log(tempText);
+      .join("");
+    result.innerHTML = tempText;
+  }
+});
+
+/*
+// meaning og each line of code
+const text = [
+  // Здесь есть массив текстовых строк
+  // ...
+];
+
+const form = document.querySelector(".lorem-form");
+const amount = document.getElementById("amount");
+const result = document.querySelector(".lorem-text");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  // Отменяем стандартное поведение формы при отправке, чтобы предотвратить перезагрузку страницы
+
+  const value = parseInt(amount.value);
+  // Получаем значение из поля ввода как целое число
+
+  const random = Math.floor(Math.random() * text.length);
+  // Генерируем случайное число в диапазоне от 0 до длины массива text
+
+  if (isNaN(value) || value <= 0 || value > 9) {
+    // Проверяем, является ли введенное значение не числом, меньше или равным нулю или больше 9
+    result.innerHTML = `<p class="result">${text[random]}</p>`;
+    // Если условие выполняется, выводим случайный текст
+  } else {
+    let tempText = text.slice(0, value);
+    // Если введенное значение проходит проверку, создаем временный массив из первых value элементов из массива text
+
+    tempText = tempText.map(function (item) {
+        return `<p class="result">${item}</p>`;
+      })
+      .join("");
+    // Преобразуем каждый элемент временного массива в абзац и объединяем их в одну строку
+
+    result.innerHTML = tempText;
+    // Выводим полученный текст в элемент с классом "lorem-text"
+  }
+});
+*/

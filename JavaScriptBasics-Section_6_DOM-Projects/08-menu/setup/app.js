@@ -114,6 +114,7 @@ function diplayMenuItems(menuItems) {
 
   sectionCenter.innerHTML = displayMenu;
 }
+
 function displayMenuButtons() {
   const categories = menu.reduce(
     function (values, item) {

@@ -46,6 +46,7 @@ let currentItem = 0;
 
 
 window.addEventListener('DOMContentLoaded', function () {
+  //console.log("shake and bake");
   showPerson(); //showPerson(currentItem);
 });
 
